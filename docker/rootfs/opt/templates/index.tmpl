@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CDN links list</title>
+    <link rel="stylesheet" href="/templates/bootstrap.min.css" type="text/css">
+    <link rel="shortcut icon" href="/templates/favicon.ico">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation"></nav>
+<div class="container-fluid">
+    <div class="row">
+    {{ range $index, $value := .CDN }}
+    <div class="col-xs-6 col-sm-4">
+   <h3>{{ $value.Head }}</h3>
+
+    <ul class="list-unstyled">
+   {{ range $i, $v := $value.Links.Path }}
+    <li>{{ $v }}</li>
+   {{ end }}
+   </ul>
+   </div>
+   {{ end }}
+   </div>
+</div>
+</body>
+</html>
